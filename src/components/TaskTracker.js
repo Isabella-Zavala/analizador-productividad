@@ -1,4 +1,3 @@
-// src/components/TaskTracker.js
 import React, { useState } from 'react';
 
 function TaskTracker({ addTask }) {
@@ -8,46 +7,47 @@ function TaskTracker({ addTask }) {
 
   const handleAddTask = () => {
     if (taskName && category && duration) {
-        const task = {
-          name: taskName,
-          category: category,
-          duration: parseFloat(duration), // Convertir la duración a número
-          date: new Date(), // Fecha actual
-        };
-        addTask(task);
-        // Los campos de la tarea NO se reinician
-        // setTaskName('');
-        // setCategory('');
-        // setDuration('');
-      } else {
-        alert("Por favor completa todos los campos.");
-      }
-    };
+      const task = {
+        name: taskName,
+        category: category,
+        duration: parseFloat(duration), // Convertir la duración a número
+        date: new Date(), // Fecha actual
+      };
+      addTask(task);
 
-    return (
-        <div>
-          <h2>Agregar Tarea</h2>
-          <input
-            type="text"
-            placeholder="Nombre de la tarea"
-            value={taskName}
-            onChange={(e) => setTaskName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Categoría"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Duración (en horas)"
-            value={duration}
-            onChange={(e) => setDuration(e.target.value)}
-          />
-          <button onClick={handleAddTask}>Agregar Tarea</button>
-        </div>
-      );
+      // Reiniciar los campos del formulario después de agregar la tarea
+      setTaskName('');
+      setCategory('');
+      setDuration('');
+    } else {
+      alert("Por favor completa todos los campos.");
     }
-    
-    export default TaskTracker;
+  };
+
+  return (
+    <div>
+      <h2>Agregar Tarea</h2>
+      <input
+        type="text"
+        placeholder="Nombre de la tarea"
+        value={taskName}
+        onChange={(e) => setTaskName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Categoría"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Duración (en horas)"
+        value={duration}
+        onChange={(e) => setDuration(e.target.value)}
+      />
+      <button onClick={handleAddTask}>Agregar Tarea</button>
+    </div>
+  );
+}
+
+export default TaskTracker;

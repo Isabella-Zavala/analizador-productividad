@@ -1,4 +1,3 @@
-// src/components/BreakTracker.js
 import React, { useState } from 'react';
 import './BreakTracker.css'; // Importamos el archivo CSS
 
@@ -7,7 +6,7 @@ function BreakTracker() {
   const [customTime, setCustomTime] = useState('');
 
   const addBreak = (time) => {
-    setBreaks([...breaks, { time, date: new Date().toLocaleTimeString() }]);
+    setBreaks([...breaks, { time: Number(time), date: new Date().toLocaleTimeString() }]);
   };
 
   const handleCustomBreak = () => {
@@ -15,7 +14,7 @@ function BreakTracker() {
       alert('Por favor, ingresa un número válido.');
       return;
     }
-    addBreak(customTime);
+    addBreak(Number(customTime));
     setCustomTime('');
   };
 
