@@ -35,19 +35,23 @@ function Statistics({ tasks }) {
 
   return (
     <div className="statistics-container">
-      <h3>Lista de Tareas</h3>
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            <strong>{task.name}</strong> - {task.duration} horas - 
-            <span className="category">{task.category}</span> - 
-            <span className="priority">{task.priority}</span>
-          </li>
-        ))}
-      </ul>
-      <h2>Estadísticas de Productividad</h2>
-      <Pie data={data} />
-    </div>
+  <div>
+    <h3>Lista de Tareas</h3>
+    <ul>
+      {tasks.map((task, index) => (
+        <li key={index}>
+          <strong>{task.name}</strong> - {task.duration} horas - 
+          <span className="category">{task.category}</span> - 
+          <span className="priority">{task.priority}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div className="chart-container">
+    <h2>Estadísticas de Productividad</h2> 
+    <Pie data={data} />
+  </div>
+</div>
   );
 }
 

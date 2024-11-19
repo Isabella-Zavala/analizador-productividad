@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import TaskTracker from './components/TaskTracker';
 import Statistics from './components/Statistics';
 import Goals from './components/Goals';
-import Rewards from './components/Rewards';
 import BreakTracker from './components/BreakTracker';
 import './App.css';
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -16,11 +16,10 @@ function App() {
 
   return (
     <div>
-      <h1>Analizador de Productividad</h1>
+      <h2>Analizador de Productividad</h2>
       <TaskTracker addTask={addTask} />
       <Statistics tasks={tasks} />
       <Goals tasks={tasks} />
-      <Rewards tasks={tasks} />
       <BreakTracker />
     </div>
   );

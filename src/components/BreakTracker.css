@@ -1,0 +1,95 @@
+/* src/components/BreakTracker.css */
+.break-tracker {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: -180px 0 0 20px; /* Mayor valor negativo en margin-top */
+    text-align: center;
+}
+  
+  h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+  
+  .break-button {
+    background-color: #729cbe;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .break-button:hover {
+    background-color: #507fa7;
+  }
+  
+  .custom-time-input {
+    width: 120px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .total-breaks {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #729cbe;
+  }
+  
+  .break-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .break-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .remove-button {
+    background-color: #FF6384;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .remove-button:hover {
+    background-color: #FF5050;
+  }
+  
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+    }
+  
+    .break-button, .custom-time-input {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+  
