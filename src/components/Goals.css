@@ -6,7 +6,7 @@
     max-width: 700px;
     margin-left: auto;  /* Alinea el cuadro a la derecha */
     margin-right: 20px; /* Espacio adicional a la derecha */
-    margin-top: 50px;  /* Deja el 'margin-top' igual para que ambos estén a la misma altura */
+    height: 100%;
 }
 
   .goals-header {
@@ -31,7 +31,7 @@
   }
   
   .add-goal-button {
-    background-color: #729cbe;
+    background-color: #21618c ;
     color: white;
     font-size: 1rem;
     padding: 10px 20px;

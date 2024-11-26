@@ -1,163 +1,211 @@
+/* Reset General */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  /* Paleta de colores */
+  --primary-color: #21618c ;
+  --secondary-color: #f9f9fc;
+  --accent-color: #ff5c77;
+  --neutral-color: #333;
+  --background-color: #f4f4f9;
+  --text-light: #666;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  /* Tipografía */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
+
+  /* Espaciado */
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 30px;
+}
+
+/* Body */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  padding: 20px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--background-color);
+  color: var(--neutral-color);
+  padding: var(--spacing-medium);
   line-height: 1.6;
 }
 
+/* Encabezados */
 h1 {
-  font-size: 3rem;
+  font-size: var(--font-size-h1);
   text-align: center;
-  color: #293c51;
-  margin-bottom: 20px;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-large);
 }
 
 h2 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: var(--font-size-h2);
   text-align: center;
-  color: #293c51;
+  color: var(--primary-color);
+  margin: var(--spacing-large) 0;
 }
 
-/* Formulario de tareas */
+/* Formulario */
 form {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   max-width: 500px;
-  margin: 0 auto 30px;
+  margin: 0 auto var(--spacing-large);
+  font-size: var(--font-size-large);
 }
 
 input, select, button {
   display: block;
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
+  margin-bottom: var(--spacing-small);
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  outline: none;
 }
 
 button {
-  background-color: #729cbe;
-  color: white;
-  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
   border: none;
-  font-size: 18px;
+  cursor: pointer;
+  font-size: var(--font-size-large);
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #507fa7;
 }
 
-/* Estilo de los gráficos */
+/* Gráficos */
 canvas {
   max-width: 100%;
-  border-radius: 9px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Contenedor de estadísticas */
-.statistics-container {
-  display: flex;
-  justify-content: space-between; /* Distribuir los elementos de manera equitativa */
-  align-items: flex-start;
-  max-width: 900px; /* Ajustar el ancho para pantallas grandes */
-  margin: 0 auto;
-  gap: 40px;
-}
-
-ul {
-  flex: 3; /* Lista de tareas ocupará más espacio */
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-li {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   background-color: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-small);
+}
+
+/* Contenedores */
+.app-container {
+  padding: var(--spacing-medium);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-large);
+  gap: var(--spacing-medium);
+}
+
+.col-1, .col-2 {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-medium);
+}
+
+.col-1 {
+  flex: 1;
+  max-width: 45%;
+}
+
+.col-2 {
+  flex: 2;
+}
+
+/* Lista de tareas */
+.tasks-container {
+  background-color: #fff;
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.tasks-container h3 {
+  font-size: var(--font-size-large);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+.tasks-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks-container li {
+  background-color: var(--secondary-color);
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+  border-radius: var(--border-radius);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-li strong {
-  font-size: 16px;
-  color: #729cbe;
+.tasks-container li:hover {
+  transform: translateY(-2px);
 }
 
-li span {
-  font-size: 14px;
-  color: #777;
+.tasks-container li strong {
+  color: var(--primary-color);
 }
 
-li .priority {
+.tasks-container li .priority {
   font-weight: bold;
-  color: #FF6384;
+  color: var(--accent-color);
 }
 
-li .category {
-  color: #36A2EB;
+.tasks-container li .category {
+  color: var(--primary-color);
 }
 
-/* Gráfica */
-.statistics-container .chart-container {
-  flex: 0 0 300px; /* Ajuste de tamaño fijo para la gráfica */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
-
-.statistics-container canvas {
-  width: 200px; /* Tamaño adecuado para la gráfica */
-  height: 200px;
-}
-
-/* Ajuste responsivo */
-@media (max-width: 768px) {
-  .statistics-container {
-    width: 100%;
-    flex-direction: column; /* En pantallas pequeñas, se acomoda todo en columna */
-    align-items: center;
-  }
-
-  .statistics-container .chart-container {
-    flex: 0 0 200px;
-  }
-
-  .statistics-container .chart-container canvas {
-    width: 150px; /* Gráfica más pequeña en móviles */
-    height: 150px;
-  }
-}
-
+/* Resumen */
 .summary {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-color);
+  padding: var(--spacing-medium);
+  margin-top: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
 .summary h2 {
   margin-top: 0;
+  color: var(--primary-color);
 }
 
 .summary p {
   font-size: 1.2rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-1, .col-2 {
+    max-width: 100%;
+  }
 }
